@@ -5,6 +5,9 @@ const COLORS = require("./lib/colors");
 const fs = require('fs');
 const readlineSync = require('readline-sync');
 
+// * CODED BY Dhani Setiaji
+// * https://github.com/dhanisetiaji/canva-edu
+
 const emailURL = "https://10minutesemail.net/"
 const daftarCanva = "https://www.canva.com/id_id/signup/?signupRedirect=%2Fedu-signup&loginRedirect=%2Fedu-signup&brandingVariant=edu"
 
@@ -48,8 +51,6 @@ const serverOption = {
                     }else{
                         console.log(`[ ${moment().format("HH:mm:ss")} ]`, COLORS.FgGreen, `=> Found Email: ${getemail}`, COLORS.Reset);
                         await page1.bringToFront();
-                        // await page1.$eval("span._38oWvQ"[10], elem => elem.click())
-                        // await page1.click("span._38oWvQ")[10]
                         await page1.evaluate(() => document.querySelectorAll("._38oWvQ")[10].click())
                         await page1.type('#__a11yId13', 'Dhani Setiaji')
                         await page1.type('#__a11yId16', getemail)
